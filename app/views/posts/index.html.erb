@@ -1,0 +1,17 @@
+<!-- +++++ First Post +++++ -->
+<div id="grey">
+    <div class="container">
+		<div class="row">
+		    <% @posts.each do |post| %>
+				<div class="col-lg-8 col-lg-offset-2">
+					<p><img src="/assets/user.png" width="50px" height="50px"><ba>Stanley Stinson</ba></p>
+					<p><bd><%= post.created_at %></bd></p>
+					<h4><%= post.title %></h4>
+					<p><%= post.body %></p>
+					<p><a href="/posts/show/<%= post.id %>">Continue Reading...</a></p>
+				</div>
+			<% end %>
+		</div><!-- /row -->
+    </div> <!-- /container -->
+</div><!-- /grey -->
+<%= link_to "New Post", "/posts/new" %>
